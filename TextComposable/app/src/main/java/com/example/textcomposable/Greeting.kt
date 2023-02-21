@@ -1,13 +1,7 @@
-package com.example.textcomposable
+//another methods
+//1. preferredWidth and preferredHeigth
+//2. size(width = 80.dp, height = 240.dp)
+//3.size(80.dp) --> equal width and height
 
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+//4. Modifier.fillMaxSize() ----> Match Parent both
+//5. Modifier.fillMaxWidth()---> MatchParent Width
