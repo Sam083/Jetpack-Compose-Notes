@@ -3,6 +3,7 @@ package com.example.surface
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
@@ -40,21 +42,30 @@ fun MainScreen(){
         modifier = Modifier.fillMaxSize(),
     ){
 
-        Row() {
+        Row(
+            modifier = Modifier.fillMaxSize(),
+            horizontalArrangement = Arrangement.SpaceEvenly,
+            verticalAlignment = Alignment.Bottom
+        )
+        {
+                RowColoredBar(Color.Red)
+                RowColoredBar(Color.White)
+                RowColoredBar(Color.Green)
 
-            Surface(color = Color.Red,
-                modifier = Modifier.fillMaxHeight()
-                    .width(60.dp)) { }
-            Surface(color = Color.White,
-                modifier = Modifier.fillMaxHeight()
-                    .width(60.dp)) { }
-            Surface(color = Color.Green,
-                modifier = Modifier.fillMaxHeight()
-                    .width(60.dp)) { }
         }
 
 
     }
+
+
+}
+@Composable
+fun RowColoredBar(color: Color)
+{
+    Surface(color = color,
+        modifier = Modifier.height(600.dp)
+            .width(60.dp)
+    ) { }
 }
 
 
